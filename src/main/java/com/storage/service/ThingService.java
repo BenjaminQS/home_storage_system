@@ -34,5 +34,9 @@ public class ThingService {
 	public void add(Thing bean) {
 		thingDAO.save(bean);
 	}
+	
+	public void delete(int id) {
+		thingDAO.delete(id);
+	}
 
 }
