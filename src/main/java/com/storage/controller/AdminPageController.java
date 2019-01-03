@@ -9,8 +9,14 @@ public class AdminPageController {
     public String admin(){
 		return "redirect:admin_thing_list";
     }
+	
 	@GetMapping(value="/admin_thing_list")
 	public String listThing(){
 		return "admin/listThing";
+	}
+	
+	@GetMapping(value="/admin_thing_edit")
+	public String editThing(){
+		return "admin/editThing";
 	}
 }

@@ -38,5 +38,10 @@ public class ThingService {
 	public void delete(int id) {
 		thingDAO.delete(id);
 	}
+	
+	public Thing get(int id) {
+        Thing c= thingDAO.findOne(id);
+        return c;
+    }
 
 }

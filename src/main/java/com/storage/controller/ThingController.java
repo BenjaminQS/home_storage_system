@@ -58,4 +58,10 @@ public class ThingController {
         file.delete();
         return null;
     }
+    
+    @GetMapping("/things/{id}")
+    public Thing get(@PathVariable("id") int id) throws Exception {
+        Thing bean=thingService.get(id);
+        return bean;
+    }
 }
