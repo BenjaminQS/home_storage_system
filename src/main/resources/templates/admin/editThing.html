@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head th:include="include/admin/adminHeader::html('±à¼­ÎïÆ·')" ></head>
+<head th:include="include/admin/adminHeader::html('ç¼–è¾‘ç‰©å“')" ></head>
 <body>
 <div th:replace="include/admin/adminNavigator::html" ></div>
 <script>
@@ -17,7 +17,7 @@
         var vue = new Vue({
             el: '#workingArea',
             data: data4Vue,
-            mounted:function(){ //mounted¡¡±íÊ¾Õâ¸ö Vue ¶ÔÏó¼ÓÔØ³É¹¦ÁË
+            mounted:function(){ //mounted
                 this.get();
             },
             methods: {
@@ -29,11 +29,11 @@
                     })
                 },
                 update:function () {
-                    if(!checkEmpty(this.bean.name, "·ÖÀàÃû³Æ"))
+                    if(!checkEmpty(this.bean.name, "ç‰©å“åç§°"))
                         return;
                     var url = this.uri+"/"+this.bean.id;
 
-                    //axios.js ÉÏ´«ÎÄ¼şÒªÓÃ formData ÕâÖÖ·½Ê½
+                    //axios.js
                     var formData = new FormData();
                     formData.append("image", this.file);
                     formData.append("name", this.bean.name);
@@ -54,32 +54,26 @@
 <div id="workingArea">
 
     <ol class="breadcrumb">
-        <li><a href="admin_category_list">ËùÓĞ·ÖÀà</a></li>
-        <li class="active">±à¼­·ÖÀà</li>
+        <li><a href="admin_thing_list">æ‰€æœ‰ç‰©å“</a></li>
+        <li class="active">ç¼–è¾‘ç‰©å“</li>
     </ol>
 
     <div class="panel panel-warning editDiv">
-        <div class="panel-heading">±à¼­·ÖÀà</div>
+        <div class="panel-heading">ç¼–è¾‘ç‰©å“</div>
         <div class="panel-body">
             <table class="editTable">
                 <tr>
-                    <td>ÎïÆ·Ãû³Æ</td>
+                    <td>ç‰©å“åç§°</td>
                     <td><input  @keyup.enter="update" v-model.trim="bean.name" type="text" class="form-control"></td>
                 </tr>
                 <tr>
-                    <td>´æ·ÅÎ»ÖÃ</td>
+                    <td>å­˜æ”¾ä½ç½®</td>
                     <td><input  @keyup.enter="update" v-model.trim="bean.location" type="text" class="form-control"></td>
-                </tr>
-                <tr>
-                    <td>·ÖÀàÍ¼Æ¬</td>
-                    <td>
-                        <input id="categoryPic" accept="image/*" type="file" name="image" @change="getFile($event)" />
-                    </td>
                 </tr>
                 <tr class="submitTR">
                     <td colspan="2" align="center">
                         <input type="hidden" name="id"   v-model.trim="bean.id" >
-                        <a href="#nowhere" class="btn btn-success" @click="update">Ìá ½»</a>
+                        <a href="#nowhere" class="btn btn-success" @click="update">æäº¤</a>
                     </td>
                 </tr>
             </table>

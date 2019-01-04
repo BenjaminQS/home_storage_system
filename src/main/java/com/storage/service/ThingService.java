@@ -43,5 +43,9 @@ public class ThingService {
         Thing c= thingDAO.findOne(id);
         return c;
     }
+	
+	public void update(Thing bean) {
+		thingDAO.save(bean);
+	}
 
 }
