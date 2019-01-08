@@ -97,7 +97,7 @@
             <tr v-for="bean in beans ">
                 <td>{{bean.id}}</td>
                 <td>
-                    <img height="40px"  :src="'img/category/'+bean.id+'.jpg'">
+                    <a title="点击查看原图" :href="'img/category/'+bean.id+'.jpg'"><img height="40px"  :src="'img/category/'+bean.id+'.jpg'"></a>
                 </td>
                 <td>
                     {{bean.name}}
